@@ -1,6 +1,6 @@
 <template>
   <header class="nav">
-    <div class="brand">MySite</div>
+    <div class="brand">Life Line</div>
     <nav :class="['links', { show: open }]">
       <NuxtLink to="/" class="link" active-class="active" exact>Home</NuxtLink>
       <NuxtLink to="/about" class="link" active-class="active">About</NuxtLink>
