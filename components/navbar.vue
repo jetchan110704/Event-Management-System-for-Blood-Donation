@@ -1,11 +1,19 @@
 <template>
-  <nav>
-    <div>MySite</div>
-    <ul class="flex gap-6">
-      <li><NuxtLink to="/" class="hover:underline">Home</NuxtLink></li>
-      <li><NuxtLink to="/about" class="hover:underline">About</NuxtLink></li>
-      <li><NuxtLink to="/services" class="hover:underline">Services</NuxtLink></li>
-      <li><NuxtLink to="/contact" class="hover:underline">Contact</NuxtLink></li>
-    </ul>
-  </nav>
+  <header class="nav">
+    <div class="brand">MySite</div>
+    <nav :class="['links', { show: open }]">
+      <NuxtLink to="/" class="link" active-class="active" exact>Home</NuxtLink>
+      <NuxtLink to="/about" class="link" active-class="active">About</NuxtLink>
+      <NuxtLink to="/services" class="link" active-class="active">Services</NuxtLink>
+      <NuxtLink to="/contact" class="link" active-class="active">Contact</NuxtLink>
+    </nav>
+    <button class="burger" @click="toggle" aria-label="Toggle navigation">
+      <span :class="{ open: open }"></span>
+    </button>
+  </header>
 </template>
+
+<script setup>
+import './navbar.css'
+import { open, toggle } from './navbar.js'
+</script>
