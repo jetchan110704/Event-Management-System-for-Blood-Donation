@@ -15,5 +15,11 @@
 
 <script setup>
 import './navbar.css'
-import { open, toggle } from './navbar.js'
+
+// We define the logic directly here instead of importing it
+const open = ref(false)
+
+function toggle() {
+  open.value = !open.value
+}
 </script>
